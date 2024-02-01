@@ -65,8 +65,13 @@ function App() {
 
   function checkAnswer(e,ans){
     if(!quit){
-      e.target.innerText == ans ? setScore(score+1) : null
-      toggleNextQuestion()
+      if(e.target.innerText == ans) {
+         setScore(score+1)
+         alert("Correct Answer")
+      }else{
+        alert("Wrong Answer")
+      }
+        toggleNextQuestion()
       resultPopUp()
       setAttempt(attempted+1)
     }
